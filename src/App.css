@@ -10,6 +10,28 @@
   margin-bottom: 0.5rem;
 }
 
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  font: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #8884;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+}
+
+.tab.is-active {
+  background: var(--accent, #aa3bff);
+  border-color: var(--accent, #aa3bff);
+  color: white;
+}
+
 .app h2 {
   font-size: 1.25rem;
   margin-top: 2.5rem;

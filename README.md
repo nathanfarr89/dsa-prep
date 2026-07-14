@@ -5,6 +5,11 @@ throwing at you: **data structures & algorithms** (not your day job, but
 still asked) and **build a small app** prompts (very much your day job).
 TypeScript + React + Vitest.
 
+**Live flashcards (works on your phone, no setup):**
+https://nathanfarr89.github.io/dsa-prep/ — open it, tap "Flashcards", and
+review patterns/complexity/gotchas away from a keyboard. Progress ("Got
+it" vs "Still learning") is saved per-device in `localStorage`.
+
 ## Setup
 
 ```bash
@@ -56,6 +61,33 @@ app/utility" style of question:
 - `event-emitter` — pub/sub, the mechanism under a lot of state management
 - `deep-clone-flatten` — recursion applied to real JS objects instead of a
   textbook tree
+
+**Flashcards** (`src/flashcards/`) — a quiz-style review mode built from
+this repo's content (`data.ts` holds ~70 cards: patterns, complexity, and
+gotchas per topic, not pasted solutions). Accessible via the "Flashcards"
+tab in the app, both locally (`npm run dev`) and on the deployed GitHub
+Pages site. Deck filtering, shuffle, and "only show what I haven't
+mastered yet" all persist across sessions via `localStorage`, so it's
+usable one-handed on a phone.
+
+## Deploying to GitHub Pages
+
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds
+the app and publishes it to GitHub Pages automatically — no local build
+step needed. Two one-time setup items if you fork/reuse this:
+
+1. In the repo's **Settings → Pages**, set "Source" to **GitHub Actions**
+   (only needs doing once — I can't flip this from the CLI, it requires
+   repo owner access in the GitHub UI).
+2. If you rename the repo away from `dsa-prep`, update the `base` path in
+   [`vite.config.ts`](vite.config.ts) to match (GitHub Pages project sites
+   are served from `https://<user>.github.io/<repo-name>/`, so the app's
+   asset paths need that prefix).
+
+Note the deploy workflow only runs typecheck + build, not `npm test` —
+the DSA/frontend-challenge stubs are *meant* to throw `Not implemented`
+until solved, so gating deploys on the test suite would keep it perpetually
+red.
 
 ## How to think about a DSA problem in an interview
 
