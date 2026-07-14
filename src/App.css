@@ -1,0 +1,55 @@
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  text-align: left;
+}
+
+.app h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.app h2 {
+  font-size: 1.25rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #4443;
+  padding-bottom: 0.35rem;
+}
+
+.app section p {
+  color: #888;
+}
+
+.topic-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.topic-list li {
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  background: #8883;
+}
+
+.topic-list code {
+  font-size: 0.85em;
+}
+
+.not-implemented {
+  border: 1px dashed #d97706;
+  background: #d977061a;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #d97706;
+}
+
+.not-implemented-detail {
+  margin-top: 0.5rem;
+  font-family: monospace;
+  font-size: 0.85em;
+  opacity: 0.8;
+}
